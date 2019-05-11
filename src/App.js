@@ -1,5 +1,6 @@
 import React from "react";
+import { Dropdown } from "./InputDropdown.component";
 
 export const App = () => {
-  return <div>Hello</div>;
+  return <Dropdown />;
 };
