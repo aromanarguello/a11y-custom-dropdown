@@ -2,21 +2,30 @@ import React from "react";
 import Downshift from "downshift";
 import styled from "styled-components";
 
+const Container = styled.div`
+  position: relative;
+  border: 1px solid;
+  height: 400px;
+`;
+
 const Menu = styled.ul`
-  border: 1px solid black;
-  width: 80px;
+  border: 1px solid #d3d3d3;
+  width: 118px;
   display: flex;
+  padding: 0;
   justify-content: flex-start;
   align-items: flex-start;
   flex-direction: column;
-  text-align: start;
+  /* text-align: start; */
+  position: relative;
+  bottom: 16px;
 `;
 
 const Item = styled.li`
   display: inline;
   list-style: none;
-  padding: 0;
-  margin: 0;
+  margin: 3px 0;
+  width: 100%;
 `;
 
 const dropdownItems = [
@@ -36,13 +45,14 @@ const Dropdown = () => {
         getMenuProps,
         getItemProps,
         getToggleButtonProps,
+        getRootProps,
         clearSelection,
         isOpen,
         inputValue,
         selectedItem,
         highlightedIndex
       }) => (
-        <div>
+        <Container {...getRootProps()}>
           <h1>Auto Complete Example</h1>
           <input {...getInputProps()} />
           <button {...getToggleButtonProps()}>
@@ -72,7 +82,7 @@ const Dropdown = () => {
                 ))}
             </Menu>
           ) : null}
-        </div>
+        </Container>
       )}
     </Downshift>
   );
