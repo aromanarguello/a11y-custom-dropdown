@@ -15,7 +15,6 @@ const Menu = styled.ul`
   justify-content: flex-start;
   align-items: flex-start;
   flex-direction: column;
-  /* text-align: start; */
   position: relative;
   bottom: 16px;
 `;
